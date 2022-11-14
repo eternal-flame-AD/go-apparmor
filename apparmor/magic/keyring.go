@@ -7,6 +7,7 @@ import (
 	"github.com/jsipprell/keyctl"
 )
 
+// Keyring is a magic storage using linux thread keyring as the backend.
 type Keyring struct {
 	commChan chan keyringPacket
 }
@@ -102,6 +103,7 @@ func (k *keyringHandle) Clear() error {
 	return nil
 }
 
+// NewKeyring returns a new Keyring (kernel keyring backed) magic storage instance.
 func NewKeyring(opts *KeyringOpts) (Store, error) {
 	if opts == nil {
 		opts = &KeyringOpts{TimeoutSeconds: 10}

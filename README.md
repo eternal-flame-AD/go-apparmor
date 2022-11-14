@@ -98,7 +98,7 @@ Functions that begin with `AA` are functional replicas of their respective libap
 That means the caller is responsible for setting up the goroutine runtime so that the OS thread
 that gets modified is scheduled to the desired goroutine(s), this usually boils down to:
 - Locking the thread to the calling goroutine with `runtime.LockOSThread()`
-- Make sure that additional goroutines that are spawned are also locked to a transitioned thre.
+- Make sure that additional goroutines that are spawned are also locked to a transitioned thread.
 - Determining whether the thread could be reused by calling `runtime.UnlockOSThread()` after transitioning the thread back to its original state.
 
 

@@ -104,9 +104,11 @@ func (k *keyringHandle) Clear() error {
 }
 
 // NewKeyring returns a new Keyring (kernel keyring backed) magic storage instance.
+//
+// Default options is no timeout (0 seconds)
 func NewKeyring(opts *KeyringOpts) (Store, error) {
 	if opts == nil {
-		opts = &KeyringOpts{TimeoutSeconds: 10}
+		opts = &KeyringOpts{TimeoutSeconds: 0}
 	}
 
 	commChan := make(chan keyringPacket)

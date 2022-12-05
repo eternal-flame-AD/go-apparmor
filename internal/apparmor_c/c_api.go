@@ -1,3 +1,4 @@
+//go:build linux
 package apparmor_c
 
 import (

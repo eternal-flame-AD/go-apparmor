@@ -1,3 +1,4 @@
+//go:build linux
 package magic
 
 type Store interface {

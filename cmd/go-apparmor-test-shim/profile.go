@@ -1,3 +1,4 @@
+//go:build linux
 package main
 
 import "text/template"

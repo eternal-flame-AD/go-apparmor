@@ -1,3 +1,4 @@
+//go:build linux
 package magic
 
 import (
